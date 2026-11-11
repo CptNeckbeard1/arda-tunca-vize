@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance; // diğer scriptlerden rahatça erişebilmek için instance tanımlıyoruz
+    public static AudioManager instance; // diğer scriptlerden rahatça erişebilmek için instance tanımlıyor
 
-    [SerializeField] private AudioSource sfxSource; // ses efektlerini oynatmak için ses kaynağı bileşeni atıyoruz
-    [SerializeField] private AudioSource musicSource; // arka plan müziğini oynatmak için ses kaynağı bileşeni atıyoruz
+    [SerializeField] private AudioSource sfxSource; // ses efektlerini oynatmak için ses kaynağı bileşeni atıyor
+    [SerializeField] private AudioSource musicSource; // arka plan müziğini oynatmak için ses kaynağı bileşeni atıyor
     [SerializeField] private AudioClip greenBallSound; // yeşil topa deydiğimizde çalacak ses dosyası
     [SerializeField] private AudioClip redBallSound; // kırmızı topa deydiğimizde çalacak ses dosyası
     [SerializeField] private AudioClip jumpSound; // zıpladığımız zaman çalacak ses dosyası
@@ -13,33 +13,33 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this; // sınıfın referansını kendine eşitliyoruz ki her yerden çağırabilelim
+        instance = this; // sınıfın referansını kendine eşitliyoruz ki her yerden çağırabilsin
     }
 
     void Start()
     {
-        musicSource.clip = backgroundMusic; // müzik kaynağına arka plan müziğini yüklüyoruz
-        musicSource.loop = true; // müziğin sürekli döngüde çalmasını sağlıyoruz
-        musicSource.Play(); // müziği başlatıyoruz
-        Debug.Log("music oynadı"); // konsola müziğin çaldığını yazdırıyoruz
+        musicSource.clip = backgroundMusic; // müzik kaynağına arka plan müziğini yüklüyor
+        musicSource.loop = true; // müziğin sürekli döngüde çalmasını sağlıyor
+        musicSource.Play(); // müziği başlatıyor
+        Debug.Log("music oynadı"); // konsola müziğin çaldığını yazdırıyor
     }
 
-    public void PlayGreenBallSound() // yeşil top sesi için fonksiyon oluşturuyoruz
+    public void PlayGreenBallSound() // yeşil top sesi için fonksiyon 
     {
-        Debug.Log("green ball sesi oynatıldı"); // konsola yazdırıyoruz
-        sfxSource.PlayOneShot(greenBallSound); // yeşil top ses efektini bir kerelik çalıyoruz
+        Debug.Log("green ball sesi oynatıldı"); // konsola yazdırıyor
+        sfxSource.PlayOneShot(greenBallSound); // yeşil top ses efektini bir kerelik çalıyor
     }
 
-    public void PlayRedBallSound() // kırmızı top sesi için fonksiyon oluşturuyoruz
+    public void PlayRedBallSound() // kırmızı top sesi için fonksiyon 
     {
-        Debug.Log("red ball sesi oynatıldı"); // konsola yazdırıyoruz
-        sfxSource.PlayOneShot(redBallSound); // kırmızı top ses efektini bir kerelik çalıyoruz
+        Debug.Log("red ball sesi oynatıldı"); // konsola yazdırıyor
+        sfxSource.PlayOneShot(redBallSound); // kırmızı top ses efektini bir kerelik çalıyor
     }
 
-    public void PlayjumpSound() // zıplama sesi için fonksiyon oluşturuyoruz
+    public void PlayjumpSound() // zıplama sesi için fonksiyon 
     {
-        Debug.Log("jump sesi oynatıldı"); // konsola yazdırıyoruz
-        sfxSource.PlayOneShot(jumpSound); // zıplama ses efektini bir kerelik çalıyoruz
+        Debug.Log("jump sesi oynatıldı"); // konsola yazdırıyor
+        sfxSource.PlayOneShot(jumpSound); // zıplama ses efektini bir kerelik çalıyor
     }
 
     void Update()
