@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour
         }
         else //puan yetersiz kaldığı durumlar için else kısmını belirliyor
         {
-            Debug.Log("Yeterli puan yok! Gerekli: " + requiredScore + ""); //puanın yetmediğini ve gereken puanı konsola yazdırıyor
+            Debug.Log("Yetersiz puan Gerekli: " + requiredScore + ""); //puanın yetmediğini ve gereken puanı konsola yazdırıyor
         }
     }
 
@@ -26,12 +26,12 @@ public class SceneController : MonoBehaviour
 
         if (sıradakiSeviye < SceneManager.sceneCountInBuildSettings) //sıradaki seviye projedeki toplam sahne sınırları içinde mi diye kontrol ediyor
         {
-            Debug.Log("Seviye geçildi!"); //konsola seviyenin başarıyla geçildiğini yazdırıyor
+            Debug.Log("Seviyeyi geçtin"); //konsola seviyenin başarıyla geçildiğini yazdırıyor
             SceneManager.LoadScene(sıradakiSeviye); //hesapladığımız sıradaki yeni sahneyi yüklüyor
         }
         else //oyundaki başka sahne kalmadıysa, yani oyun bittiyse çalışacak else kısmını yazzıyor
         {
-            Debug.Log("Tebrikler, oyunu bitirdin!"); //oyunun bittiğini konsola tebrikler mesajımızı yazdırıyor
+            Debug.Log("Oyun bitti"); //oyunun bittiğini konsola tebrikler mesajımızı yazdırıyor
         }
     }
 }
