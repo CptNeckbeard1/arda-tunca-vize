@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //ivmeli şekilde zıplıyor
         AudioManager.instance.PlayjumpSound(); //AudioManagerda atadığımız ses dosyasını çekip kullanıyor
         isGrounded = false; //yerde olmadığını belirtiyor
-        print("Zıpladın!"); //konsola yazdırıyor
+        print("Zıpladın"); //konsola yazdırıyor
 
     }
     private void UpdateScoreUi() //skor tablomuz için fonskiyon oluşturuyor
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) //yere değdiğimiz zaman konsoldan bildirmesini sağlıyoruz ayrıca tekrar zıplayabilmemiz için isGrounded değerini true yapıyor
         {
             isGrounded = true; //tekrardan yerde olduğunu belirtiyor
-            Debug.Log("Yerdesin!"); //Konsola yazdırıyor
+            Debug.Log("Yerdesin"); //Konsola yazdırıyor
         }
     }
     private void OnTriggerEnter(Collider other) //nesneler birbiri içinden geçtiği için OnTriggerEnter kullandı
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             Score += 10; //skor değerimizi 10 arttırıyor
             UpdateScoreUi(); //skor tablomuzu güncelliyor
             AudioManager.instance.PlayGreenBallSound(); //AudioManagerda atadığımız ses dosyasını çekip kullanıyor
-            Debug.Log("GreenBall! Score" + Score); //konsola yazdırıyor
+            Debug.Log("GreenBall Score" + Score); //konsola yazdırıyor
             Destroy(other.gameObject); //çarpışma yaşandıktan sonra topun silinmesini sağlıyor
         }
         else if (other.CompareTag("RedBall")) //kırmızı topa değdiğimiz zaman puan kaybetmemizi, ses oynatmasını ve topun yok olmasını sağlıyor
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             Score -= 5; //skor değerimizi 5 azaltıyor
             UpdateScoreUi(); //skor tablomuzu güncelliyor
             AudioManager.instance.PlayRedBallSound(); //AudioManagerda atadığımız ses dosyasını çekip kullanıyor
-            Debug.Log("RedBall! Score" + Score); //konsola yazdırıyor
+            Debug.Log("RedBall Score" + Score); //konsola yazdırıyor
             Destroy(other.gameObject); //çarpışma yaşandıktan sonra topun silinmesini sağlıyor
         }
     }
